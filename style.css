@@ -5,17 +5,133 @@
 }
 
 :root {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
   height: 100%;
 
   --max-size: 62rem;
 }
 
-body {
-  max-width: var(--max-size);
+img {
+  width: 1rem;
 }
 
 body {
+  min-height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: stretch;
+}
+
+main {
+  width: 100%;
+  max-width: var(--max-size);
   display: flex;
   flex-direction: column;
+  align-items: stretch;
   justify-content: center;
+  padding: 0 1rem;
+  margin: 4rem 0;
+}
+
+form {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  justify-content: stretch;
+  color: lightslategray;
+}
+
+form input {
+  flex-grow: 1;
+  font-size: medium;
+  padding: 0 0.5rem;
+  border-radius: 0.3rem;
+  border: 2px solid lightblue;
+  color: lightslategray;
+  font-size: 16px;
+  outline: none;
+}
+
+form button {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  align-items: center;
+  font-size: 16px;
+  margin-left: 1rem;
+  padding: 0.5rem 1.2rem;
+  background-color: lightblue;
+  border: none;
+  border-radius: 0.2rem;
+  transition: background-color 0.3s;
+  color: inherit;
+}
+
+form button:hover {
+  background-color: aquamarine;
+  cursor: pointer;
+}
+
+form button img {
+  width: 1.6rem;
+  margin: 0.3rem;
+}
+
+p {
+  color: darkslategrey;
+  font-size: 16px;
+  line-height: 1.5rem;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  margin-top: 4rem;
+}
+
+p img {
+  width: 3rem;
+  margin-right: 0.3rem;
+}
+
+#todo-list {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  color: darkslategrey;
+}
+
+#todo-list li {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  font-size: 16px;
+  padding: 0.1rem 0;
+  margin: 0.8rem 0;
+  width: 90%;
+  position: relative;
+}
+
+.checked::before {
+  position: absolute;
+  content: '';
+  background-image: url('./src/img/push-pin.png');
+  background-repeat: no-repeat;
+  background-size: contain;
+  left: -2rem;
+  width: 1.7rem;
+  height: 1.7rem;
+}
+
+#todo-list img {
+  width: 1.8rem;
+  margin-right: 0.5rem;
+}
+
+#todo-list input {
+  width: 1.8rem;
+  height: 1.8rem;
+  margin-right: 0.5rem;
+}
+
+.done {
+  text-decoration: line-through;
 }

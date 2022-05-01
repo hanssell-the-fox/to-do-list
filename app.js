@@ -21,8 +21,14 @@ todoButton.addEventListener('click', event => {
   const label = document.createElement('label')
 
   status.setAttribute('type', 'checkbox')
+  status.addEventListener('click', function () {
+    newTask.classList.toggle('checked')
+    label.classList.toggle('done')
+  })
+
   label.textContent = content
 
+  newTask.classList.add('checked')
   newTask.appendChild(status)
   newTask.appendChild(label)
   todoList.appendChild(newTask)
